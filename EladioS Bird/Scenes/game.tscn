@@ -1,0 +1,201 @@
+[gd_scene load_steps=29 format=3 uid="uid://530a7043pe85"]
+
+[ext_resource type="PackedScene" uid="uid://bsps7hxu16rk1" path="res://Entities/Canos.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://poe5knvjbhwg" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://yhgqdrr6kyls" path="res://Entities/player.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://y5py7iuqsyep" path="res://Scripts/back_ground.gd" id="4_v158k"]
+[ext_resource type="Texture2D" uid="uid://s83bx6r3h0e0" path="res://Sprites/3 - Cloud_cover_1.png" id="5_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://dav8dh4m24r4v" path="res://Sprites/5 - Sky_color.png" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://b8v75ib5y1f7l" path="res://Sprites/4 - Cloud_cover_2.png" id="6_v158k"]
+[ext_resource type="Script" uid="uid://d1jtxg32t52en" path="res://Scripts/back_ground_2.gd" id="7_h4fw4"]
+[ext_resource type="AudioStream" uid="uid://klsfa7xmqchs" path="res://Sounds/sfx_point.mp3" id="10_rku1e"]
+[ext_resource type="AudioStream" uid="uid://blncl18ojy4hs" path="res://Sounds/Lego Yoda Death Sound.mp3" id="11_rfjv2"]
+[ext_resource type="AudioStream" uid="uid://cqhvbnd44cl6u" path="res://Sounds/wing-flap-1-6434.mp3" id="12_1phco"]
+[ext_resource type="AudioStream" uid="uid://ug5nyrwck5yw" path="res://Sounds/game-gaming-minecraft-background-music-377647.mp3" id="12_rku1e"]
+[ext_resource type="AudioStream" uid="uid://hrsll4y1t1mw" path="res://Sounds/sega-rally-15-game-over-yeah1.mp3" id="14_1phco"]
+[ext_resource type="Texture2D" uid="uid://d3q05wfhsh2hy" path="res://Sprites/seta.png" id="15_85qyi"]
+[ext_resource type="Texture2D" uid="uid://cgrikon3rel1q" path="res://Sprites/EladiosBird.png" id="16_iivbl"]
+[ext_resource type="Texture2D" uid="uid://3ms2u0g1je13" path="res://Sprites/botao.png" id="17_7nbq1"]
+[ext_resource type="PackedScene" uid="uid://b1sjd867te6nn" path="res://Scenes/hud.tscn" id="18_85qyi"]
+[ext_resource type="Texture2D" uid="uid://yagdlethemnn" path="res://Sprites/maos.png" id="18_exi56"]
+[ext_resource type="Texture2D" uid="uid://uuriw8vjnfdj" path="res://Sprites/ChatGPT Image 1 de nov. de 2025, 12_56_49.png" id="18_iivbl"]
+
+[sub_resource type="GDScript" id="GDScript_1phco"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1phco"]
+size = Vector2(56, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb51f"]
+size = Vector2(53, 0.75)
+
+[sub_resource type="GDScript" id="GDScript_85qyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8sx"]
+atlas = ExtResource("17_7nbq1")
+region = Rect2(0, 0, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg4q0"]
+atlas = ExtResource("17_7nbq1")
+region = Rect2(0, 32, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm72l"]
+atlas = ExtResource("18_exi56")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22asu"]
+atlas = ExtResource("18_exi56")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkdbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg4q0")
+}],
+"loop": true,
+"name": &"botao",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm72l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22asu")
+}],
+"loop": true,
+"name": &"dedo",
+"speed": 2.0
+}]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_qxrlw")
+pipe_scene = ExtResource("1_ebmjs")
+
+[node name="BackGround" type="Node" parent="."]
+script = ExtResource("4_v158k")
+
+[node name="Ceu" type="Sprite2D" parent="BackGround"]
+texture = ExtResource("5_wowpa")
+centered = false
+
+[node name="Nuvem1" type="Sprite2D" parent="BackGround"]
+texture = ExtResource("5_1l0tm")
+centered = false
+
+[node name="Nuvem2" type="Sprite2D" parent="BackGround"]
+position = Vector2(288, 0)
+texture = ExtResource("5_1l0tm")
+centered = false
+region_rect = Rect2(0, 0, 288, 208)
+
+[node name="BackGround2" type="Node" parent="."]
+script = ExtResource("7_h4fw4")
+
+[node name="Nuvem1d" type="Sprite2D" parent="BackGround2"]
+texture = ExtResource("6_v158k")
+centered = false
+
+[node name="Nuvem2d" type="Sprite2D" parent="BackGround2"]
+position = Vector2(288, 0)
+texture = ExtResource("6_v158k")
+centered = false
+region_rect = Rect2(0, 0, 288, 208)
+
+[node name="TimerCanos" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="spawner" type="Marker2D" parent="."]
+position = Vector2(399, 104)
+
+[node name="player" parent="." instance=ExtResource("3_wrm1d")]
+z_index = 10
+position = Vector2(66, 100)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sons" type="Node" parent="."]
+
+[node name="Point" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("10_rku1e")
+
+[node name="Flap" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("12_1phco")
+
+[node name="Morte" type="AudioStreamPlayer2D" parent="Sons"]
+process_mode = 3
+stream = ExtResource("11_rfjv2")
+
+[node name="trilha sonora" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("12_rku1e")
+
+[node name="Game over" type="AudioStreamPlayer2D" parent="Sons"]
+process_mode = 3
+stream = ExtResource("14_1phco")
+
+[node name="colisores" type="Area2D" parent="."]
+script = SubResource("GDScript_1phco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisores"]
+top_level = true
+position = Vector2(70, 216)
+shape = SubResource("RectangleShape2D_1phco")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="colisores"]
+top_level = true
+position = Vector2(64, -5)
+shape = SubResource("RectangleShape2D_nb51f")
+
+[node name="tutorial" type="Node" parent="."]
+script = SubResource("GDScript_85qyi")
+
+[node name="seta" type="Sprite2D" parent="tutorial"]
+position = Vector2(185.15, 88.4)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("15_85qyi")
+
+[node name="Eladios_sombra" type="Sprite2D" parent="tutorial"]
+modulate = Color(0.44, 0.44, 0.44, 0.501961)
+position = Vector2(144.15, 86.4)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_iivbl")
+
+[node name="Space" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(139, 126)
+sprite_frames = SubResource("SpriteFrames_fkdbe")
+animation = &"botao"
+autoplay = "botao"
+frame_progress = 0.355475
+
+[node name="mão" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(152, 134)
+sprite_frames = SubResource("SpriteFrames_fkdbe")
+animation = &"dedo"
+autoplay = "dedo"
+frame_progress = 0.816467
+
+[node name="ExitTexture" type="TextureRect" parent="tutorial"]
+offset_left = 2.0
+offset_top = 180.0
+offset_right = 1538.0
+offset_bottom = 1204.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("18_iivbl")
+
+[node name="ExitButton" type="Button" parent="tutorial"]
+process_mode = 3
+offset_left = 6.0
+offset_top = 183.0
+offset_right = 28.0
+offset_bottom = 197.0
+flat = true
+
+[node name="HUD" parent="." instance=ExtResource("18_85qyi")]
+
+[connection signal="body_entered" from="colisores" to="." method="_on_colisores_body_entered"]
+[connection signal="pressed" from="tutorial/ExitButton" to="." method="_on_exit_button_pressed"]

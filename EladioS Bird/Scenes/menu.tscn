@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1c0x88qka7cb"]
+
+[ext_resource type="Texture2D" uid="uid://dav8dh4m24r4v" path="res://Sprites/5 - Sky_color.png" id="1_jsrd8"]
+[ext_resource type="Script" uid="uid://c8cdpjdqy1hlk" path="res://Scripts/menu.gd" id="1_rfqti"]
+[ext_resource type="Script" uid="uid://cwtjq5beub70" path="res://Scripts/back_ground_2_da.gd" id="2_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://b8v75ib5y1f7l" path="res://Sprites/4 - Cloud_cover_2.png" id="2_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://s83bx6r3h0e0" path="res://Sprites/3 - Cloud_cover_1.png" id="3_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://dv8p0blf01r0a" path="res://Sprites/eladios Editado.png" id="4_6swd7"]
+[ext_resource type="Script" uid="uid://mwip52f7opk1" path="res://Scripts/back_ground_2_da_2.gd" id="4_q3rjx"]
+[ext_resource type="Script" uid="uid://cca5h5j461vqr" path="res://Scripts/back_ground_3_da.gd" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://dl681ofkfx6xn" path="res://Sprites/canos2.png" id="5_7qvly"]
+[ext_resource type="Texture2D" uid="uid://che006syj0spt" path="res://Sprites/ChatGPT Image 31 de out. de 2025, 21_52_53.png" id="6_rfqti"]
+[ext_resource type="Texture2D" uid="uid://d4hxg5aap7knp" path="res://Sprites/ChatGPT Image 31 de out. de 2025, 22_18_55.png" id="10_7qvly"]
+[ext_resource type="Texture2D" uid="uid://c467i4cu00gg2" path="res://Sprites/ChatGPT Image 31 de out. de 2025, 22_23_40.png" id="12_g8i7c"]
+[ext_resource type="AudioStream" uid="uid://dkf4dys3nax8d" path="res://Sounds/gaming-game-minecraft-background-music-372242.mp3" id="14_8ph6h"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rfqti")
+
+[node name="fundo" type="Node" parent="."]
+
+[node name="Sprite2D3" type="Sprite2D" parent="fundo"]
+texture = ExtResource("1_jsrd8")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="BackGround2da" type="Node" parent="fundo"]
+script = ExtResource("2_jsrd8")
+
+[node name="Nuvem1d" type="Sprite2D" parent="fundo/BackGround2da"]
+position = Vector2(0, 47)
+texture = ExtResource("2_wbdvm")
+centered = false
+
+[node name="Nuvem2d" type="Sprite2D" parent="fundo/BackGround2da"]
+position = Vector2(288, 47)
+texture = ExtResource("2_wbdvm")
+centered = false
+region_rect = Rect2(0, 0, 288, 208)
+
+[node name="BackGround2da2" type="Node" parent="fundo"]
+script = ExtResource("4_q3rjx")
+
+[node name="Nuvem1d" type="Sprite2D" parent="fundo/BackGround2da2"]
+position = Vector2(0, 47)
+texture = ExtResource("3_q3rjx")
+centered = false
+
+[node name="Nuvem2d" type="Sprite2D" parent="fundo/BackGround2da2"]
+position = Vector2(288, 47)
+texture = ExtResource("3_q3rjx")
+centered = false
+region_rect = Rect2(0, 0, 288, 208)
+
+[node name="BackGround3da" type="Node" parent="fundo"]
+script = ExtResource("4_wbdvm")
+
+[node name="Nuvem1d" type="Sprite2D" parent="fundo/BackGround3da"]
+position = Vector2(0, -45)
+texture = ExtResource("2_wbdvm")
+centered = false
+flip_v = true
+
+[node name="Nuvem2d" type="Sprite2D" parent="fundo/BackGround3da"]
+position = Vector2(288, -45)
+texture = ExtResource("2_wbdvm")
+centered = false
+flip_v = true
+region_rect = Rect2(0, 0, 288, 208)
+
+[node name="EladiosEditado" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(219, 152)
+texture = ExtResource("4_6swd7")
+
+[node name="Canos2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(214, 84)
+scale = Vector2(3, 3)
+texture = ExtResource("5_7qvly")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -14.0
+offset_top = 12.0
+offset_right = 1522.0
+offset_bottom = 1036.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_rfqti")
+
+[node name="exitIcon" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 23.0
+offset_top = 148.0
+offset_right = 1559.0
+offset_bottom = 1172.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_7qvly")
+
+[node name="PlayIcon" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 106.0
+offset_right = 1558.0
+offset_bottom = 1130.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_g8i7c")
+
+[node name="exitButton" type="Button" parent="."]
+process_mode = 3
+z_index = 10
+layout_mode = 0
+offset_left = 37.0
+offset_top = 161.0
+offset_right = 86.0
+offset_bottom = 186.0
+flat = true
+
+[node name="PlayButton" type="Button" parent="."]
+process_mode = 3
+z_index = 10
+layout_mode = 0
+offset_left = 33.0
+offset_top = 114.0
+offset_right = 88.0
+offset_bottom = 149.0
+flat = true
+
+[node name="somDefundo" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="somDefundo"]
+stream = ExtResource("14_8ph6h")
+autoplay = true
+
+[connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

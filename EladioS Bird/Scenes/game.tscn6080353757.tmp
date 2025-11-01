@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://530a7043pe85"]
+
+[ext_resource type="PackedScene" uid="uid://bsps7hxu16rk1" path="res://Entities/Canos.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://poe5knvjbhwg" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://yhgqdrr6kyls" path="res://Entities/player.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://bos0jogbegqid" path="res://Scenes/hud.tscn" id="4_3dryh"]
+[ext_resource type="Texture2D" uid="uid://s83bx6r3h0e0" path="res://Sprites/3 - Cloud_cover_1.png" id="5_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://dav8dh4m24r4v" path="res://Sprites/5 - Sky_color.png" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://b8v75ib5y1f7l" path="res://Sprites/4 - Cloud_cover_2.png" id="6_v158k"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_qxrlw")
+pipe_scene = ExtResource("1_ebmjs")
+
+[node name="TimerCanos" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(399, 104)
+
+[node name="player" parent="." instance=ExtResource("3_wrm1d")]
+z_index = 1
+position = Vector2(66, 96)
+scale = Vector2(0.3, 0.3)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3"]
+texture = ExtResource("5_wowpa")
+centered = false
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1"]
+texture = ExtResource("5_1l0tm")
+centered = false
+
+[node name="2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2"]
+texture = ExtResource("6_v158k")
+centered = false
+
+[node name="HUD" parent="." instance=ExtResource("4_3dryh")]
+
+[editable path="HUD"]

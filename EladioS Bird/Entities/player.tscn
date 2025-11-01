@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yhgqdrr6kyls"]
+
+[ext_resource type="Script" uid="uid://ddflje10h288p" path="res://Scripts/player.gd" id="1_gb1tc"]
+[ext_resource type="Texture2D" uid="uid://cgrikon3rel1q" path="res://Sprites/EladiosBird.png" id="2_gb1tc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb1tc"]
+radius = 18.0
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+process_mode = 3
+z_index = 2
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_gb1tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gb1tc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 2)
+shape = SubResource("CircleShape2D_gb1tc")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1sjd867te6nn"]
+
+[ext_resource type="Script" uid="uid://cxdsqrmlhut1g" path="res://Scripts/hud.gd" id="1_bjfho"]
+[ext_resource type="Texture2D" uid="uid://x15ykxfwfee8" path="res://Sprites/ChatGPT Image 31 de out. de 2025, 14_30_50.png" id="2_6fbih"]
+[ext_resource type="FontFile" uid="uid://d05jw03arw1hd" path="res://Fonts/Pixel Game.otf" id="3_t1xeu"]
+[ext_resource type="Texture2D" uid="uid://tycby3blnvd7" path="res://Sprites/ChatGPT Image 31 de out. de 2025, 14_46_11.png" id="4_6fbih"]
+[ext_resource type="Texture2D" uid="uid://uuriw8vjnfdj" path="res://Sprites/ChatGPT Image 1 de nov. de 2025, 12_56_49.png" id="5_t1xeu"]
+
+[node name="HUD" type="Control"]
+process_mode = 3
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bjfho")
+
+[node name="Moldura" type="Sprite2D" parent="."]
+position = Vector2(143.7, 108.3)
+scale = Vector2(0.187891, 0.212305)
+texture = ExtResource("2_6fbih")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 49.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.618097, 0.657003, 0.48869, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t1xeu")
+text = "Score:"
+
+[node name="High_Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 64.0
+offset_bottom = 56.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0.619608, 0.658824, 0.490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t1xeu")
+theme_override_font_sizes/font_size = 10
+text = "High Score:"
+
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 60.0
+offset_right = 215.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.619608, 0.658824, 0.490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t1xeu")
+theme_override_font_sizes/font_size = 40
+text = "Game over"
+
+[node name="RetryTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 99.0
+offset_right = 1739.0
+offset_bottom = 1293.0
+scale = Vector2(0.0428208, 0.0435642)
+texture = ExtResource("4_6fbih")
+
+[node name="ExitTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 140.0
+offset_right = 2334.0
+offset_bottom = 1164.0
+scale = Vector2(0.0428208, 0.0435642)
+texture = ExtResource("5_t1xeu")
+
+[node name="RetryButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 117.0
+offset_top = 111.0
+offset_right = 161.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_t1xeu")
+flat = true
+
+[node name="ExitButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 106.0
+offset_top = 147.0
+offset_right = 174.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("3_t1xeu")
+flat = true
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

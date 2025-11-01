@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://530a7043pe85"]
+
+[ext_resource type="PackedScene" uid="uid://bsps7hxu16rk1" path="res://Entities/Canos.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://poe5knvjbhwg" path="res://Scripts/game.gd" id="1_qxrlw"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_qxrlw")
+Cena_cano = ExtResource("1_ebmjs")
+
+[node name="timerCanos" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(1370, 326)
