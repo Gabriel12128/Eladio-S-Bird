@@ -71,22 +71,6 @@ Este projeto tem como objetivo demonstrar conceitos fundamentais de desenvolvime
 
 ---
 
-🔮 Melhorias Futuras
-
-Sistema de recorde (High Score)
-
-Animações do personagem
-
-Sons e música de fundo
-
-Menu inicial
-
-Sistema de dificuldade progressiva
-
-Otimização para dispositivos móveis
-
----
-
 👤 Autor
 
 Gabriel
