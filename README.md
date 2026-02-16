@@ -43,6 +43,8 @@ Este projeto foi criado para estudo e prática de desenvolvimento de jogos 2D ut
 |--------|-----------|
 | Espaço / Clique do Mouse | Fazer o personagem voar |
 
+---
+
 🚀 Como Executar
 
 Baixe o Projeto ou acesse o link Itch.io:
@@ -60,6 +62,8 @@ Execute a cena principal.
 Godot 4.x (recomendado)
 
 Sistema operacional compatível com Godot
+
+---
 
 📖 Objetivo do Projeto
 
@@ -90,6 +94,8 @@ Gabriel
 📜 Licença
 
 Projeto desenvolvido para fins educacionais. Verifique as licenças dos assets utilizados.
+
+---
 
 ⭐ Contribuições
 
